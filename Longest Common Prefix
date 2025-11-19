@@ -1,0 +1,16 @@
+// Longest Common Prefix
+class Solution {
+public:
+    string longestCommonPrefix(vector<string>& strs) {
+        string pp=strs[0];
+        for(int i=0;i<strs.size();i++)
+        {
+            while(strs[i].rfind(pp,0)!=0)
+            pp=pp.substr(0,pp.size()-1);
+
+            if(pp.empty())
+            return "";
+        }
+        return pp;
+    }
+};
